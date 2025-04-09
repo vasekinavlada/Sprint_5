@@ -2,12 +2,18 @@ import random
 import string
 
 def generate_email():
-    prefix = ''.join(random.choices(string.ascii_lowercase, k=6))
-    domain = 'yandex.ru'
-    return f"{prefix}_test_999@{domain}"
 
-def generate_password(length=8):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+    # Списки для генерации
+    names = ["анна", "иван", "мария", "алексей", "ольга"]
+    surnames = ["иванова", "петров", "сидоров", "смирнов", "кузнецова"]
+    domains = ["yandex.ru", "mail.ru", "gmail.com"]
 
-def generate_invalid_email():
-    return "invalid-email"
+    # Выбираем случайные компоненты
+    name = random.choice(names)
+    surname = random.choice(surnames)
+    cohort = "9"  # Номер когорты
+    digits = f"{random.randint(100, 999)}"
+    domain = random.choice(domains)
+
+    email = f"{name}_{surname}_{cohort}_{digits}@{domain}"
+    return email

@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
-from config import REGISTER_URL
+
 
 class RegistrationPage:
-    URL = REGISTER_URL
 
     NAME_INPUT = (By.XPATH, "//label[text()='Имя']/following-sibling::input")  # Поле Имя
     EMAIL_INPUT = (By.XPATH, "//label[contains(text(),'Email')]/following-sibling::input")  # Поле Email
